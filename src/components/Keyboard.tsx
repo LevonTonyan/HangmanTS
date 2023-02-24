@@ -1,5 +1,6 @@
 import React from 'react'
 import './KeyboardStyless.css'
+import { v4 as uuid } from 'uuid';
 
 
 interface KeyboardProps {
@@ -7,17 +8,19 @@ interface KeyboardProps {
     guessedLetters: string[]
     word: string
     setCount: React.Dispatch<React.SetStateAction<number>>
+    disKeys: string[]
+    setDisKeys:React.Dispatch<React.SetStateAction<string[]>>
  }
 
 
-const Keyboard = ({setGuessedLetters,guessedLetters, word, setCount }:KeyboardProps) => {
+const Keyboard = ({setGuessedLetters,guessedLetters, word, setCount, setDisKeys, disKeys }:KeyboardProps) => {
     let alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 
 
     /////////////////////////////////////////HAndling 
     function handleClick(letter: string) { 
-        
+        setDisKeys(prev => [...prev, letter])
         const newGuessed = [...word].map((el, i) => { 
             if (el === letter) { return el }
             else {return "_"}
@@ -39,14 +42,18 @@ const Keyboard = ({setGuessedLetters,guessedLetters, word, setCount }:KeyboardPr
 
   return (
       <div className='key-container'>
-          {alph.map((l,i) => { 
-              return <button
-                  key={i}
-                  onClick={() => handleClick(l)}
-                  className='key'>
-                  {l.toUpperCase()}
-              </button>
-          }) }
+          {alph.map(l => {
+              return (<button
+              disabled={disKeys.includes(l) ? true : false}
+              key={uuid()}
+              onClick={() => {
+                handleClick(l)
+              }}
+              className="key"
+            >
+              {l.toUpperCase()}
+            </button>)
+          })}
     </div>
   )
 }

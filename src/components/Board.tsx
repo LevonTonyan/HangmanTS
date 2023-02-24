@@ -20,14 +20,15 @@ const Board = ({guessedLetters, count, word }: BoardProps) => {
   
 
 
-console.log(count)
+
   return (
       <div className='board'>
           {count < 6 ? (
               guessedLetters.map(el => <span key={uuidv4()} className='letter'>{el}</span>)
           ) : word}
           
-    </div>
+      </div>
+      
   )
 }
 

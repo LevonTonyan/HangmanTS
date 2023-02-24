@@ -1,5 +1,6 @@
 .key-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 50%;
     margin:auto
@@ -12,10 +13,11 @@
     width: 50px;
     height: 50px;
     border: 1px solid black;
-    border-radius: 15px;
+    border-radius: 5px;
     margin:5px;
 }
 .key:active {
-    background-color: aqua;
+    background-color: rgb(85, 144, 211);
+    
 }
 
