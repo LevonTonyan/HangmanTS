@@ -1,0 +1,8 @@
+.hangman-container {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+}

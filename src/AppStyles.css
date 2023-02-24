@@ -1,0 +1,17 @@
+.reset-btn {
+    margin-top: 100px;
+    width: 200px;
+    margin: auto;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items:center;
+    padding-top: 20px;
+
+}
+.hidden {
+    display: none;
+}

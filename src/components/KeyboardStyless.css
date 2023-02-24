@@ -1,0 +1,21 @@
+.key-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin:auto
+}
+.key {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin:5px;
+}
+.key:active {
+    background-color: aqua;
+}
+
